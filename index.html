@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DailyDiet</title>
+    <link rel="stylesheet" href="mydiet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#BMIcalc">BMI Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calorie_calc">Calorie Calculator</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#calorie-chart-section">Calorie Chart</a>
+                    </li>
+
+            </div>
+            </ul>
+        </div>
+        </div>
+    </nav>
+    <section id="home">
+        <div class="home-sec">
+            <h1>
+                <marquee behavior="" direction="right"> Daily Diet Plan </marquee>
+            </h1>
+
+            <img src="daily-diet-1.png" alt="">
+
+        </div>
+    </section>
+
+    <div class="vertical-line"></div>
+
+
+
+    <section id="BMIcalc" class="bmi-section">
+        <div class="bmi-calculator">
+
+            <h2 class="heading">BMI Calculator</h2>
+
+            <p class="text">Height [cm]</p>
+            <input type="text" id="height">
+
+            <p class="text">Weight [kg]</p>
+            <input type="text" id="weight">
+
+            <p id="result"></p>
+            <button id="btn" onclick="BMI()">Calculate</button>
+
+            <p id="Info">Please enter height [cm] and weight [kg]</p>
+        </div>
+    </section>
+
+    <!-- <div class="vertical-line"></div> -->
+
+
+    <section id="Bmi-table-section" class="bmi-section">
+        <div class="bmi-table">
+            <h3 class="heading2">BMI table for adult</h3>
+            <table id="BMItable">
+
+
+                <tr>
+                    <th>S.No.</th>
+                    <th>Category</th>
+                    <th>Result</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>
+                        <16 </td>
+                    <td>Severe Thinness</td>
+                </tr>
+                <td>2</td>
+                <td>16-17 </td>
+                <td>Moderate Thinness</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>17-18.5 </td>
+                    <td>Mild Thinness</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>18.5-25</td>
+                    <td>Normal</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>25-30 </td>
+                    <td>Overweight</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>30-35 </td>
+                    <td>Obese Class 1</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>35-40 </td>
+                    <td>Obese Class 2</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>>40 </td>
+                    <td>Obese Class 3</td>
+                </tr>
+            </table>
+
+        </div>
+    </section>
+    <section id="Bmiformula">
+        <h3 class="heading3">BMI formula</h3>
+        <div class="paragraph">
+            <p>
+                Below are the equations used for calculating BMI in the International System of Units (SI) and the US
+                <br>
+                customary system (USC) using a 5'10", 160-pound individual as an example:
+                <br>
+                <br>
+                <strong id="usc-strong"> USC Units:</strong>
+                <br>
+                BMI = 703 &#215 mass(lbs) &#247 height <sup>2</sup>(in)
+                <br>
+                = 703 &#215 160 &#247 70 <sup>2</sup>
+                <br>
+                = 22.96 &#215 kg &#247 m <sup>2</sup>
+                <br>
+                <br>
+                <strong id="si-strong"> SI, Metric Units: </strong>
+                <br>
+                BMI = Mass(kg) &#247 height <sup>2</sup>(m)
+                <br>
+                = 72.57 &#247 1.78 <sup>2</sup>
+                <br>
+                = 22.90 &#215 kg &#247 m <sup>2</sup>
+            </p>
+
+        </div>
+    </section>
+
+
+    <!-- partial:index.partial.html -->
+    <div id="calorie_calc" class="calculator">
+        <form>
+            <div class="row">
+                <h1>Calorie Calculator</h1>
+                <label class="caption" for="in_height">Height [cm] :</label>
+                <input class="l4" type="text" size="12" name="in_height" id="in_height">
+            </div>
+            <div class="row">
+                <label class="caption" for="in_weight">Weight [kg] :</label>
+                <input class="l4" type="text" size="12" name="in_weight" id="in_weight">
+            </div>
+            <div class="row">
+                <label class="caption" for="in_age">Age</label>
+                <input class="l4" type="text" size="12" name="in_age" id="in_age">
+            </div>
+            <div class="row">
+                <div class="rbtn">
+                    <span class="caption">Gender:</span>
+                    <input type="radio" class="v2" id="in_sex0" name="in_sex" value="1">
+                    <label for="in_sex0">Male</label>
+
+                    <input type="radio" class="v2" id="in_sex1" name="in_sex" value="2">
+                    <label for="in_sex1">Female</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <label class="caption" for="in_activity">Activity:</label>
+                <select class="t3" value="1.2" name="in_activity" id="in_activity">
+                    <option selected="selected" value="1">Basal Metabolic Rate(BMR)</option>
+                    <option value="1.2">Sedentary: little or no exercise</option>
+                    <option value="1.375">Light exercise: 1-3 times/week</option>
+                    <option value="1.4625">Moderate exercise: 4-5 times/week</option>
+                    <option value="1.725">Intense exercise: 6-7 times/week</option>
+                </select>
+            </div>
+
+            <div class="row">
+                <label class="caption" for="gain_loss">Activity:</label>
+                <select class="t3" value="1.2" name="gain_loss" id="gain_loss">
+                    <option id="loss" value="12">Loss</option>
+                    <option id="gain" value="13">Gain</option>
+
+                </select>
+            </div>
+
+
+            <div class="row">
+                <button type="button" id="calculate_forms" onclick="calculate()">Calculate</button>
+            </div>
+        </form>
+    </div>
+    <div id="calorie-img">
+        <img src="calorie-img.jpg" alt="">
+    </div>
+
+
+
+
+    <section id="calorie-chart-section">
+        <div id="Calorie-Intake ">
+            <h3>Calorie Intake Chart <sub>(per 100gm)</sub></h3>
+        </div>
+        <div id="calorie-section">
+            <button id="DairyproductBtn">Dairy Product</button>
+            <button id="DryFruitBtn">Dry Fruits</button>
+            <button id="toggleBtn">Fruits</button>
+            <button id="NonVegBtn">Non-Veg Food</button>
+            <button id="VegetableBtn">Vegetables</button>
+        </div>
+    </section>
+
+    <div id="Dairyproduct" style="display: none;">
+        <table id="dairyproduct-table">
+            <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+
+            <tr>
+                <th>S.No</th>
+                <th>Protein source</th>
+                <th>Calorie</th>
+                <th>Fat(gm)</th>
+                <th>Protein(gm)</th>
+                <th>Carbs(gm)</th>
+                <th>Fiber(gm)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Paneer </td>
+                <td>296</td>
+                <td>22</td>
+                <td>20</td>
+                <td>4.5</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Cheese </td>
+                <td>350</td>
+                <td>26.91</td>
+                <td>22.21</td>
+                <td>4.71</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Yogurt </td>
+                <td>99</td>
+                <td>1.15</td>
+                <td>3.98</td>
+                <td>18.64</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Milk(100 ml)</td>
+                <td>62</td>
+                <td>3.35</td>
+                <td>3.32</td>
+                <td>4.66</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Fresh Cream </td>
+                <td>245</td>
+                <td>25</td>
+                <td>2</td>
+                <td>3.2</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Plain Yogurt </td>
+                <td>61</td>
+                <td>3.25</td>
+                <td>3.47</td>
+                <td>4.66</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Amul butter</td>
+                <td>722</td>
+                <td>80</td>
+                <td>0.5</td>
+                <td>0</td>
+                <td>0.05</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Chocolate</td>
+                <td>505</td>
+                <td>34.2</td>
+                <td>3.9</td>
+                <td>59.6</td>
+                <td>7</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Chhachh</td>
+                <td>28</td>
+                <td>1</td>
+                <td>1.9</td>
+                <td>2.9</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>lassi(100ml)</td>
+                <td>79</td>
+                <td>2.1</td>
+                <td>2.31</td>
+                <td>12.8</td>
+                <td></td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td>Ice-cream </td>
+                <td>201</td>
+                <td>10.72</td>
+                <td>3.52</td>
+                <td>24.4</td>
+                <td>0.7</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Custard </td>
+                <td>95</td>
+                <td>3.5</td>
+                <td>5.07</td>
+                <td>10.85</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Ghee(1tbsp) </td>
+                <td>127</td>
+                <td>14.46</td>
+                <td>0.06</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Curd </td>
+                <td>62</td>
+                <td>3.1</td>
+                <td>4.1</td>
+                <td>4.4</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+    <div id="dryfruits">
+        <table id="dryFruit-table" style="display: none;">
+            <tr>
+                <th>S.No</th>
+                <th>Protein source</th>
+                <th>Calorie</th>
+                <th>Fat(gm)</th>
+                <th>Protein(gm)</th>
+                <th>Carbs(gm)</th>
+                <th>Fiber(gm)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Pistachio Nuts </td>
+                <td>557</td>
+                <td>44.44</td>
+                <td>20.61</td>
+                <td>27.97</td>
+                <td>10.3</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Raisins </td>
+                <td>299</td>
+                <td>0.46</td>
+                <td>3.07</td>
+                <td>79.18</td>
+                <td>3.7</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Peanuts </td>
+                <td>567</td>
+                <td>49.24</td>
+                <td>25.8</td>
+                <td>16.13</td>
+                <td>8.5</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Dried Figs </td>
+                <td>243</td>
+                <td>0.93</td>
+                <td>3.3</td>
+                <td>63.87</td>
+                <td>9.8</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Makhana </td>
+                <td>356</td>
+                <td>1.17</td>
+                <td>9.53</td>
+                <td>77.03</td>
+                <td>7.9</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Sunflower Seed </td>
+                <td>570</td>
+                <td>49.57</td>
+                <td>27.78</td>
+                <td>18.76</td>
+                <td>10.5</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Cashew Nuts</td>
+                <td>581</td>
+                <td>47.77</td>
+                <td>16.84</td>
+                <td>30.16</td>
+                <td>3.3</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Almonds</td>
+                <td>578</td>
+                <td>50.64</td>
+                <td>21.26</td>
+                <td>19.74</td>
+                <td>11.8</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Walnuts </td>
+                <td>654</td>
+                <td>65.21</td>
+                <td>15.23</td>
+                <td>13.71</td>
+                <td>6.7</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Dates </td>
+                <td>282</td>
+                <td>0.39</td>
+                <td>2.45</td>
+                <td>75.03</td>
+                <td>8</td>
+            </tr>
+
+            <tr>
+                <td>11</td>
+                <td>Dried Coconut </td>
+                <td>660</td>
+                <td>64.53</td>
+                <td>6.88</td>
+                <td>23.65</td>
+                <td>16.3</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Pumpkin Seeds </td>
+                <td>541</td>
+                <td>45.85</td>
+                <td>24.54</td>
+                <td>17.81</td>
+                <td>3.9</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Chia Seeds </td>
+                <td>490</td>
+                <td>30.75</td>
+                <td>15.62</td>
+                <td>43.85</td>
+                <td>37.7</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>FlexSeeds </td>
+                <td>534</td>
+                <td>42.16</td>
+                <td>18.29</td>
+                <td>28.88</td>
+                <td>27.3</td>
+            </tr>
+
+        </table>
+    </div>
+
+
+
+    <div id="Fruits">
+        <table id="Fruits_table" style="display: none;">
+
+            <tr>
+                <th>S.No</th>
+                <th>Food</th>
+                <th>Quantity</th>
+                <th>Calorie</th>
+                <th>Fat(gm)</th>
+                <th>Protein(gm)</th>
+                <th>Carbs(gm)</th>
+                <th>Fiber(gm)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Apple </td>
+                <td>1</td>
+                <td>52</td>
+                <td>0.2</td>
+                <td>0.3</td>
+                <td>13.8</td>
+                <td>2.4</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Banana </td>
+                <td>1</td>
+                <td>110</td>
+                <td>0</td>
+                <td>1</td>
+                <td>22.8</td>
+                <td>2.6</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Orange </td>
+                <td>1</td>
+                <td>60</td>
+                <td>0.2</td>
+                <td>1.3</td>
+                <td>14.8</td>
+                <td>2.8</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Pomegranate </td>
+                <td>1</td>
+                <td>234</td>
+                <td>1.2</td>
+                <td>1.67</td>
+                <td>18.70</td>
+                <td>4.0</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Mango </td>
+                <td>1</td>
+                <td>107</td>
+                <td>0.9</td>
+                <td>1</td>
+                <td>24.7</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Avocado </td>
+                <td>1</td>
+                <td>322</td>
+                <td>30</td>
+                <td>4</td>
+                <td>17</td>
+                <td>14</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Pear </td>
+                <td>1</td>
+                <td>101</td>
+                <td>0.1</td>
+                <td>1</td>
+                <td>27</td>
+                <td>6</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>kiwi
+
+                </td>
+                <td>1</td>
+                <td>64</td>
+                <td>0.4</td>
+                <td>1</td>
+                <td>14</td>
+                <td>3</td>
+            <tr>
+                <td>9</td>
+                <td>Cherry </td>
+                <td>1</td>
+                <td>97</td>
+                <td>0.3</td>
+                <td>2</td>
+                <td>25</td>
+                <td>3</td>
+            <tr>
+                <td>10</td>
+                <td>blackberries </td>
+                <td>1</td>
+                <td>62</td>
+                <td>1</td>
+                <td>2</td>
+                <td>14</td>
+                <td>8</td>
+            <tr>
+                <td>11</td>
+                <td>Blueberries </td>
+                <td>1</td>
+                <td>42</td>
+                <td>1</td>
+                <td>1</td>
+                <td>11</td>
+                <td>2</td>
+            <tr>
+                <td>12</td>
+                <td>Cantaloupe </td>
+                <td>1</td>
+                <td>60</td>
+                <td>0.3</td>
+                <td>1.5</td>
+                <td>14.4</td>
+                <td>1.6</td>
+            <tr>
+                <td>13</td>
+                <td>Watermelon </td>
+                <td>1</td>
+                <td>30</td>
+                <td>0.2</td>
+                <td>0.6</td>
+                <td>7.6</td>
+                <td>0.4</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Strawberries </td>
+                <td>1</td>
+                <td>53</td>
+                <td>0.3</td>
+                <td>1.1</td>
+                <td>12.7</td>
+                <td>3.3</td>
+            </tr>
+        </table>
+    </div>
+
+
+    <div id="Non-Veg" style="display: none;">
+        <table id="non-veg_table">
+
+            <tr>
+                <th>S.No</th>
+                <th>Food</th>
+                <th>Quantity</th>
+                <th>Calorie</th>
+                <th>Fat(gm)</th>
+                <th>Protein(gm)</th>
+                <th>Carbs(gm)</th>
+                <th>Fiber(gm)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>egg </td>
+                <td>1</td>
+                <td>77</td>
+                <td>5.3</td>
+                <td>6.3</td>
+                <td>0.6</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Chicken </td>
+                <td>100g</td>
+                <td>165</td>
+                <td>6.2</td>
+                <td>53.4</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Mutton</td>
+                <td>100g</td>
+                <td>258</td>
+                <td>16.5</td>
+                <td>25.6</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Pork </td>
+                <td>100g</td>
+                <td>297</td>
+                <td>20.8</td>
+                <td>25.7</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Fish
+                </td>
+                <td>100g</td>
+                <td>84</td>
+                <td>0.92</td>
+                <td>17.76</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Beef </td>
+                <td>100g</td>
+                <td>288</td>
+                <td>19.54</td>
+                <td>26.33</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Prawns </td>
+                <td>100g</td>
+                <td>105</td>
+                <td>1.72</td>
+                <td>20.14</td>
+                <td>0.9</td>
+                <td>0</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Shrimp </td>
+                <td>100g</td>
+                <td>106</td>
+                <td>1.73</td>
+                <td>20.31</td>
+                <td>0.91</td>
+                <td>0</td>
+            <tr>
+                <td>9</td>
+                <td>Salmon </td>
+                <td>100g</td>
+                <td>146</td>
+                <td>5.93</td>
+                <td>21.62</td>
+                <td>0</td>
+                <td>0</td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- <h1 id="heading" class="chart">Calories in Vegetable Food Item</h1>
+        <h3 id="sub-heading"  class="chart">Chart are based on 100/gm potential</h3> -->
+    <div id="Vegetable" style="display: none;">
+        <table id="chart-table">
+            <tr>
+                <th>S.No</th>
+                <th>Food</th>
+                <th>Calorie</th>
+                <th>Fat(gm)</th>
+                <th>Protein(gm)</th>
+                <th>Carbs(gm)</th>
+                <th>Fiber(gm)</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>Tomato </td>
+                <td>18</td>
+                <td>0.2</td>
+                <td>0.9</td>
+                <td>3.5</td>
+                <td>1.2</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Potato </td>
+                <td>82</td>
+                <td>0.2</td>
+                <td>2.1</td>
+                <td>17.27</td>
+                <td>1.3</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Sweet Potato </td>
+                <td>86</td>
+                <td>0.1</td>
+                <td>1.6</td>
+                <td>20.1</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Carrot </td>
+                <td>41</td>
+                <td>0.2</td>
+                <td>0.9</td>
+                <td>9.6</td>
+                <td>2.8</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>Cabbage </td>
+                <td>24</td>
+                <td>0.1</td>
+                <td>1.2</td>
+                <td>5.2</td>
+                <td>2.2</td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>Cauliflower
+
+                </td>
+                <td>25</td>
+                <td>0.3</td>
+                <td>1.9</td>
+                <td>5.1</td>
+                <td>2.0</td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>Cucumber
+
+                </td>
+                <td>15</td>
+                <td>0.11</td>
+                <td>0.65</td>
+                <td>3.63</td>
+                <td>0.5</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>Pea
+                </td>
+                <td>81</td>
+                <td>0.4</td>
+                <td>5</td>
+                <td>13.71</td>
+                <td>4.2</td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>Lady's Finger </td>
+                <td>33</td>
+                <td>0.19</td>
+                <td>2</td>
+                <td>7</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>Bottle Gourd </td>
+                <td>15</td>
+                <td>0.05</td>
+                <td>0.72</td>
+                <td>3.55</td>
+                <td>0.6</td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>Eggplant </td>
+                <td>25</td>
+                <td>0.2</td>
+                <td>1.1</td>
+                <td>5.7</td>
+                <td>3</td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>Pumpkin </td>
+                <td>26</td>
+                <td>0.1</td>
+                <td>1</td>
+                <td>6.5</td>
+                <td>0.5</td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>Onion </td>
+                <td>42</td>
+                <td>0.08</td>
+                <td>0.92</td>
+                <td>10.11</td>
+                <td>1.4</td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>Mushroom </td>
+                <td>22</td>
+                <td>0.34</td>
+                <td>3.09</td>
+                <td>3.28</td>
+                <td>1</td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>Beetroot </td>
+                <td>43</td>
+                <td>0.2</td>
+                <td>1.6</td>
+                <td>10</td>
+                <td>2.8</td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>Bitter Gourd </td>
+                <td>34</td>
+                <td>0.2</td>
+                <td>3.6</td>
+                <td>7</td>
+                <td>1.9</td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>Ridge Gourd </td>
+                <td>56</td>
+                <td>0.3</td>
+                <td>0.7</td>
+                <td>14</td>
+                <td>2.9</td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>Capsicum </td>
+                <td>26</td>
+                <td>0.3</td>
+                <td>0.99</td>
+                <td>6.03</td>
+                <td>2</td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>Fenugreek</td>
+                <td>49</td>
+                <td>1</td>
+                <td>4</td>
+                <td>1.4</td>
+                <td>1</td>
+            </tr>
+        </table>
+    </div>
+
+    <section id="contact-form">
+        <div id="contact-heading">
+            <h3>Contact Form</h3>
+        </div>
+        <div>
+            <form action="UserInfo.php" method="post" id="UserInfo">
+                <p>Name:&emsp;&emsp;
+                    <input type="text" id="UserName" name="UserName">
+                </p>
+                <p>Age:&emsp;&emsp;&emsp;<input type="number" id="UserAge" name="UserAge"> </p>
+                <p>Phone No: <input type="text" id="UserPhone" name="UserPhone"> </p>
+                <p>Email Id:&emsp; &nbsp<input type="email" name="UserEmail" id="UserEmail"></p>
+                <p>Height(cm): <input type="text" id="UserHeight" name="UserHeight"> </p>
+                <p>Weight(kg): <input type="text" id="UserWeight" name="UserWeight"> </p>
+                <p>Gender:&emsp;&emsp;
+                    <input type="radio" name="Gender" value="Male">
+                    <label for="Male">Male</label>
+
+                    <input type="radio" name="Gender" value="Female">
+                    <label for="Female">Female</label>
+
+                    <input type="radio" name="Gender" value="Other">
+                    <label for="Other">Other</label>
+                </p>
+
+                <p>&emsp;&emsp;<textarea name="UserQuery" id="UserQuery" cols="40" rows="5"
+                        placeholder="Enter Your Message"></textarea></p>
+                <p><button type="submit" id="submit-button">Submit</button></p>
+            </form>
+        </div>
+    </section>
+
+    <div class="rst">
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+        <p class="result"></p>
+    </div>
+    <!-- partial -->
+
+
+    <footer>
+
+        <ul id="footer">
+            <li><a href="contact-form">Contacts</a></li>
+            <li><a href="contact-form">Message</a></li>
+        </ul>
+        Copyright &copy; www.dailydietplan.com All rights reserved!
+
+    </footer>
+    <script src="./jquery-3.6.0.min.js"></script>
+    <script src="./script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="bmi.js"></script>
+</body>
+
+</html>

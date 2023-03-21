@@ -1,0 +1,644 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+
+  background-color:black;
+
+  text-align: center;
+  font-family: sans-serif;
+}
+
+
+a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  text-decoration: none;
+  color: rgb(13, 13, 13);
+  vertical-align: center;
+}
+
+span .material-symbols-outlined :hover {
+  background-color: #a39191;
+  border-radius: 4px;
+  color: darkmagenta;
+}
+
+span:hover {
+  color: darkmagenta;
+  cursor: pointer;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+#navbar::before {
+  content: "";
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  height: 50px;
+  top: 0px;
+  left: 0px;
+  position: absolute;
+  z-index: -1;
+  /* opacity: .5 */
+}
+
+#navbar {
+  position: fixed;
+  top: 0px;
+  width: 100%;
+  z-index: 9;
+  /* background-color: black; */
+}
+
+#navbar ul {
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+#navbar ul li {
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+#navbar ul li a {
+  color: white;
+  display: block;
+  margin: 0px;
+  padding: 4px 21px;
+  text-decoration: none;
+}
+
+#navbar ul li a:hover {
+  color: yellowgreen;
+
+  border-radius: 14px;
+}
+
+#home {
+  display: flex;
+  margin: 0px 0px;
+  margin-bottom: 8px;
+  height: 80px;
+  margin-top: 5px;
+  z-index: -1;
+
+
+}
+
+#home img {
+  display: flex;
+  align-items: baseline;
+  justify-content: baseline;
+  position: relative;
+  margin-top: 45px;
+  width: 1519px;
+  height: 550px;
+  opacity: 1;
+  z-index: -9;
+}
+
+
+#home::before {
+  content: "";
+  background-color: black;
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  position: relative;
+
+
+}
+
+#home h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 55px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 700;
+  color:#0a090c;
+  /* color: white; */
+  background-image: linear-gradient(120deg,#ff6b6b,#5f27cd); 
+  border-radius: 15px;
+  position: absolute;
+  margin-top: 60px;
+  width: 40%;
+}
+
+
+
+#BMIcalc {
+  background-color: rgb(212, 211, 211);
+  border: 2px solid black;
+  border-radius: 18px;
+  margin: 15px 4px;
+  display: block;
+  position: relative;
+  margin-left: 100px;
+  margin-top: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 12px rgb(10, 8, 8);
+  width: 500px;
+  height: 400px;
+}
+
+#BMIcalc::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  z-index: -1;
+  opacity: .5
+}
+
+h2 {
+  font-weight: 600;
+  font-size: 30px;
+}
+
+.text {
+  text-align: left;
+  margin-left: 140px;
+}
+
+#height {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 200;
+  outline: none;
+
+}
+
+#weight {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 200;
+  outline: none;
+
+}
+
+#result {
+  color: #341f97;
+}
+
+#btn {
+  font-family: inherit;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border: none;
+  color: #fff;
+  background-image: linear-gradient(120deg, #ff6b6b, #5f27cd);
+  width: 150px;
+  padding: 10px;
+  border-radius: 30px;
+  outline: none;
+  cursor: pointer;
+}
+
+#btn:hover {
+  box-shadow: 1px 1px 10px #341f97;
+}
+
+#Info {
+  font-size: 15px;
+  font-family: inherit;
+}
+
+
+#Bmi-table-section {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: -620px;
+  margin-right: 100px;
+}
+
+.heading2 {
+  /* background-color: rgb(212, 211, 211); */
+  border-radius: 9px;
+  display: flex;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  font-size: 25px;
+  margin-top: 201px;
+  /* border: 1px solid black; */
+  background-color: beige;
+
+}
+
+#BMItable {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 90px;
+  padding: 20px;
+  width: 500px;
+  border-radius: 16px;
+  background-color: beige;
+  /* background-color: rgb(212, 211, 211); */
+  
+}
+
+
+
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+table,
+th,
+td {
+  border: 2px solid black;
+  padding: 6px 35px;
+}
+
+
+
+#Bmiformula {
+  margin-top: 30px;
+}
+
+.heading3 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 550px;
+
+}
+#usc-strong{
+  margin-right: 200px;
+}
+#si-strong{
+  margin-right: 150px;
+
+}
+
+.paragraph {
+  display: flex;
+
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+.calculator {
+  background-color: rgb(212, 211, 211);
+  border: 2px solid black;
+  border-radius: 18px;
+  margin: 15px 4px;
+  display: block;
+  position: relative;
+  text-align: center;
+  align-items: center;
+  justify-content: baseline;
+  margin: auto;
+  margin-top: 80px;
+  /* margin-bottom: 80px; */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 12px rgb(10, 8, 8);
+  width: 500px;
+  margin-left: 100px;
+}
+
+.calculator::before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  left: 0px;
+  position: relative;
+  z-index: -1;
+  opacity: .5
+}
+
+.calculator .row {
+  line-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+form .row button {
+  line-height: 20px;
+  height: 42px;
+}
+
+.caption {
+  font-weight: 400;
+  min-width: 120px;
+  display: inline-block;
+  font-size: 16px;
+
+}
+
+.calculator input,
+.calculator select {
+  width: auto;
+  line-height: 18px;
+  padding: 3px;
+  height: auto;
+  margin-top: 0;
+  text-align: center;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.rbtn label {
+  font-size: 14px;
+  font-weight: 400;
+  margin-right: 10px;
+}
+
+.calculator button {
+  padding: 10px 20px;
+  color: #fff;
+  cursor: pointer;
+  width: 160px;
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 25px;
+  background-image: linear-gradient(120deg, #ff6b6b, #5f27cd);
+  border: 0;
+  font-size: 16px;
+  font-weight: 700;
+  border-radius: 30px;
+}
+
+.calculator button:hover {
+  box-shadow: 1px 1px 10px #341f97;
+}
+
+.rst {
+  border: 1px solid #ddd;
+  margin-top: 20px;
+  padding: 10px;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: roboto-h, sans-serif;
+  display: none;
+}
+
+#calorie-img{
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-top: -30%;
+  margin-bottom: 15%;
+  
+}
+
+#Calorie-Intake {
+  position: relative;
+  margin-top: 80px;
+}
+#calorie-section {
+  display: inline-grid;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+
+
+#dairyproduct-table{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 79%;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 12px;
+}
+#dryFruit-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 79%;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+
+#Fruits_table{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+
+
+#non-veg_table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 79%;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 12px;
+}
+
+#chart-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 79%;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 12px;
+
+}
+
+#DairyproductBtn {
+  display: block;
+  margin: 21px 15px;
+  color: white;
+  background-color: blueviolet;
+  border: 2px;
+  border-radius: 35px;
+  width: 200px;
+  height: 40px;
+}
+#DairyproductBtn:hover{
+  color: greenyellow;
+}
+
+#DryFruitBtn {
+  display: block;
+  margin: 21px 15px;
+  background-color: blueviolet;
+  color: white;
+  border: 2px;
+  border-radius: 35px;
+  width: 200px;
+  height: 40px;
+}
+
+#DryFruitBtn:hover{
+  color: greenyellow;
+  
+}
+
+#toggleBtn {
+  display: block;
+  margin: 21px 15px;
+  background-color: blueviolet;
+  color: white;
+  border: 2px;
+  border-radius: 35px;
+  width: 200px;
+  height: 40px;
+}
+#toggleBtn:hover{
+  color: greenyellow;
+  
+}
+
+#NonVegBtn {
+  display: block;
+  margin: 21px 15px;
+  background-color: blueviolet;
+  color: white;
+  border: 2px;
+  border-radius: 35px;
+  width: 200px;
+  height: 40px;
+}
+#NonVegBtn:hover{
+  color: greenyellow;
+  
+}
+#VegetableBtn {
+  display: block;
+  margin: 21px 15px;
+  background-color: blueviolet;
+  color: white;
+  border: 2px;
+  border-radius: 35px;
+  width: 200px;
+  height: 40px;
+  
+}
+#VegetableBtn:hover{
+  color: greenyellow;
+
+}
+
+#chart-table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 79%;
+  margin: auto;
+  margin-bottom: 15px;
+  background-color: white;
+  border-radius: 12px;
+}
+
+#food_table {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+}
+
+
+
+#contact-form{
+  margin-top: 80px;
+}
+
+#UserInfo {
+  display: block;
+  margin: auto;
+  border: 2px solid black;
+  width: 45%;
+  padding: 12px 8px;
+  border-radius: 15px;
+}
+#submit-button{
+  width:90px;
+  border-radius: 5px;
+  background-image: linear-gradient(120deg, #ff6b6b, #5f27cd);
+}
+
+.chart {
+  margin-bottom: 140px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
+  margin-top: 40px;
+}
+#footer a{
+  margin-top: 7px;
+}
+
+#footer {
+  display: flex;
+  font-family: 'Ubuntu', sans-serif;
+  position: sticky;
+}
+#footer li {
+  list-style: none;
+  font-size: 1.1rem;
+}
+
+#footer li a {
+  color: white;
+  display: block;
+  padding: 0px 21px;
+  text-decoration: none;
+}
+
+#footer li a:hover {
+  color: rgb(236, 234, 234);
+  background-color: rgb(54, 43, 43);
+  border-radius: 14px;
+}
+
+
+.icon{
+  height: 20px;
+}
